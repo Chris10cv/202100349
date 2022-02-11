@@ -13,17 +13,15 @@ from tbl_facturas
 inner join tbl_clientes on tbl_clientes.idCliente = tbl_facturas.idCliente;
 
 
-set @v_idAsesor = 14;
-set @v_idAsesor = 1;
-
 
 
 insert into bd_facts . tbl_asesores ( idAsesor 
-)values(@v_idAsesor ) ;
+)values( '200' ) ;
 
-select tbl_clientes.idAsesor into@v_idAsesor 
-from bd_facts.tbl_clientes
-where idAsesor = @v_idAsesor ;
+select * from bd_facts.tbl_asesores
+where idAsesor = 200 ;
 
-select tbl_asesores.cantClientes into @v_idAsesor
-from bd_facts.tbl_asesores
+select cantClientes, idAsesor
+from tbl_asesores
+
+select 
