@@ -1,0 +1,29 @@
+select * from bd_facts.tbl_asesores ;
+
+select * from bd_facts.tbl_clientes ;
+
+select * from bd_facts.tbl_facturas ;
+
+select tbl_asesores.numeroID, tbl_asesores.nombres, tbl_clientes.idAsesor
+from tbl_asesores 
+inner join tbl_clientes on tbl_asesores.idAsesor = tbl_clientes.idAsesor; 
+
+select tbl_clientes.idCliente, tbl_clientes.nombrecompleto, tbl_facturas.idFactura, tbl_facturas.fechaEmision, tbl_facturas.fechaVencimiento, tbl_facturas.fechapagada
+from tbl_facturas
+inner join tbl_clientes on tbl_clientes.idCliente = tbl_facturas.idCliente;
+
+
+set @v_idAsesor = 14;
+set @v_idAsesor = 1;
+
+
+
+insert into bd_facts . tbl_asesores ( idAsesor 
+)values(@v_idAsesor ) ;
+
+select tbl_clientes.idAsesor into@v_idAsesor 
+from bd_facts.tbl_clientes
+where idAsesor = @v_idAsesor ;
+
+select tbl_asesores.cantClientes into @v_idAsesor
+from bd_facts.tbl_asesores
