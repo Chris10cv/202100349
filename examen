@@ -22,6 +22,11 @@ select * from bd_facts.tbl_asesores
 where idAsesor = 200 ;
 
 select cantClientes, idAsesor
-from tbl_asesores
+from tbl_asesores ;
 
-select 
+select tbl_clientes.idCliente , tbl_asesores.idAsesor
+from tbl_asesores
+inner join tbl_clientes on tbl_asesores.cantClientes = tbl_clientes.cantClientes 
+where idCliente(idCliente ) = '101 '
+
+i
